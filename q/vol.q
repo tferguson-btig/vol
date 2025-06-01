@@ -18,5 +18,5 @@
 
 medians:{[n;s;t;d]{x . y}[median t]peach exec first'[(s;d)] by symbol from select symbol,s:symbol,d:d except/:exclude from s where avgtrades>=n}
 seconds:{a+til"j"$x[1]-a:first x:"v"$x}
-expand:{[a;m]{0^x#`s#y}[a]'[m]}
- 
+expand:{[x;m] a:$[-14h=type x;seconds .sys.session x;x]; k:([]time:a); 0^$[type get m; k#m; k#/:m]}
+
