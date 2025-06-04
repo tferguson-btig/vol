@@ -20,3 +20,5 @@ medians:{[n;s;t;d]{x . y}[median t]peach exec first'[(s;d)] by symbol from selec
 seconds:{a+til"j"$x[1]-a:first x:"v"$x}
 expand:{[x;m] a:$[-14h=type x;seconds .sys.session x;x]; k:([]time:a); 0^$[type get m; k#m; k#/:m]}
 smooth:{[p;m]update s:sum[v]%count i by p from update p:1|p&ceiling p*sums v from m}
+cluster:{get group flip[r]?'min r:{x wsum x}''[x-\:/:y]}
+center:{avg'[x cluster[x]y]} 
